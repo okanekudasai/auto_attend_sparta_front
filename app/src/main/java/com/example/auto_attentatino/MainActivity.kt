@@ -150,6 +150,26 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        binding.refreshButton.setOnClickListener {
+            log("리프레시버튼눌림")
+            GlobalScope.launch(Dispatchers.IO) {
+                var response = api.refreshChrome()
+                if (response.isSuccessful) {
+                    var refreshResult = response.body()!!
+                    if (refreshResult == "1") {
+
+                        withContext(Dispatchers.Main) {
+                            showToast(this@MainActivity, "살아있어요!")
+                        }
+                    } else {
+
+                        withContext(Dispatchers.Main) {
+                            showToast(this@MainActivity, "죽었어요")
+                        }
+                    }
+                }
+            }
+        }
     }
     fun showToast(context: Context, message: String) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()

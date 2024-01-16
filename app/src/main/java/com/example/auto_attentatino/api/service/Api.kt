@@ -26,4 +26,7 @@ interface Api {
 
     @GET("sendToken/{token}")
     fun sendToken(@Path("token") token: String): Call<String>
+
+    @GET("refreshChrome")
+    suspend fun refreshChrome(): Response<String>
 }
