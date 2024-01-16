@@ -151,6 +151,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.refreshButton.setOnClickListener {
+            binding.refreshButton.visibility = View.GONE
             log("리프레시버튼눌림")
             GlobalScope.launch(Dispatchers.IO) {
                 var response = api.refreshChrome()
@@ -160,11 +161,13 @@ class MainActivity : AppCompatActivity() {
 
                         withContext(Dispatchers.Main) {
                             showToast(this@MainActivity, "살아있어요!")
+                            binding.refreshButton.visibility = View.VISIBLE
                         }
                     } else {
 
                         withContext(Dispatchers.Main) {
                             showToast(this@MainActivity, "죽었어요")
+                            binding.refreshButton.visibility = View.VISIBLE
                         }
                     }
                 }
