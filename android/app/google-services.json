@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1065050809984",
+    "project_id": "attent-a6682",
+    "storage_bucket": "attent-a6682.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065050809984:android:59615ff3eadae280156865",
+        "android_client_info": {
+          "package_name": "com.example.auto_attentatino"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLIQqZ9McZLeUXBR8y4Cp9Fk4GoZ-y88U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
